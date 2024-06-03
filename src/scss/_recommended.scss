@@ -1,0 +1,78 @@
+.recommend-container{
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        .title-container{
+            h2{
+                color: var(--light-blue);
+                text-align: center;
+            }
+        }
+        .categories{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap:2rem;
+            .category{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                background-color: var(--card-color2);
+                border-radius: 1rem;
+                &:hover{
+                    box-shadow: var(--elevate-shadow);
+                    
+                }
+                img{
+                    max-inline-size: 100%;
+                    block-size: auto;
+                    height: 10rem;
+                    width: 100%;
+                    object-fit: cover;
+                    
+                }
+                h4{
+                    color: var(--light-blue);
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        button{
+            background-color: var(--background);
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            border: 0.1rem solid blue;
+            color: var(--light-blue);
+           cursor: pointer;
+           font-weight: bolder;
+            transition: var(--transition);
+            &:hover{
+                background-color: var(--dark-blue);
+                border-color: var(--background);
+                 color: black;
+            }
+        }
+    }
+    @media screen and (min-width: 768px){
+        .container {
+            .categories {
+              grid-template-columns: repeat(2, 1fr);
+              .category {
+                img {
+                  height: 20rem;
+                }
+              }
+            }
+          }
+    }
+    @media screen and (min-width: 1200px){
+        .container {
+            .categories {
+              grid-template-columns: repeat(4, 1fr);
+            }
+          }
+    }
+}
